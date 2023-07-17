@@ -23,16 +23,14 @@ const DropdownDestinasi = ({ handleDestinationChange }) => {
         <ContainerDestinasi>
             <Label htmlFor="dropdownDestinasi">Destinasi:</Label>
             <select id="dropdownDestinasi" onChange={handleDropdownChange}>
-                <option value="Pantai">ATV</option>
-                <option value="Gunung">Cafe(isi nama cafenya)</option>
-                <option value="Kota">Camp</option>
-                <option value="Kota">Flying Fox</option>
-                <option value="Kota">Hotel</option>
-                <option value="Kota">Villa (tapi bukan Villa Duta)</option>
-                <option value="Kota">Dufan</option>
-                <option value="Kota">Jungle</option>
-                <option value="Kota">Taman Bunga</option>
-                <option value="Kota">Safari</option>
+                <option value="Cafe(masukin nama cafenya di bawah ya ayang)">Cafe</option>
+                <option value="ATV">ATV</option>
+                <option value="Camp">Kota</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Villa(tapi bukan villa duta)">Villa</option>
+                <option value="Dufan">Dufan</option>
+                <option value="Jungle">Jungle</option>
+                <option value="Safari">Safari</option>
             </select>
         </ContainerDestinasi>
     );

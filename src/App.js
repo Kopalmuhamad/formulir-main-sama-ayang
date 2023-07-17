@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import DropdownKalender from './components/DropdownKalender';
+import DropdownDestinasi from './components/DropdownDestinasi';
+import InputTempat from './components/InputTempat';
+import Result from './components/Result';
+import styled from 'styled-components'
 
-function App() {
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: start;
+align-items: center;
+padding: 100px 0;
+gap: 25px;
+`;
+
+
+const App = () => {
+
+  const [selectedDate, setSelectedDate] = useState('Hari Ini');
+  const [selectedDestination, setSelectedDestination] = useState('Pantai');
+  const [enteredPlace, setEnteredPlace] = useState('');
+
+  const handleDateChange = (selectedDate) => {
+    setSelectedDate(selectedDate);
+  }
+
+  const handleDestinationChange = (selectedDestination) => {
+    setSelectedDestination(selectedDestination);
+  }
+
+  const handlePlaceChange = (enteredPlace) => {
+    setEnteredPlace(enteredPlace);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Navbar />
+      <DropdownKalender handleDateChange={handleDateChange} />
+      <DropdownDestinasi handleDestinationChange={handleDestinationChange} />
+      <InputTempat handlePlaceChange={handlePlaceChange} />
+      <Result
+        selectedDate={selectedDate}
+        selectedDestination={selectedDestination}
+        enteredPlace={enteredPlace}
+      />
+    </Container>
   );
 }
 
 export default App;
+
